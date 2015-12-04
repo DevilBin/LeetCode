@@ -30,7 +30,7 @@ public:
 
 int main() {
     int target = 9;
-    static const int arr[] = {2, 7, 11, 15};
+    const int arr[] = {2, 7, 11, 15};
     vector<int> nums(arr, arr + sizeof(arr) / sizeof(arr[0]));
 
     Solution test;
