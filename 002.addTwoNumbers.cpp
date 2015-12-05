@@ -55,18 +55,18 @@ public:
 };
 
 int main() {
-    const int n1[] = {1, 8};
-    const int n2[] = {9, 2, 5, 6};
+    const int n1[] = {1, 0, 1};
+    const int n2[] = {9, 1, 9};
     ListNode l1(0), l2(0);
     ListNode* p1 = &l1;
     ListNode* p2 = &l2;
 
-    for(unsigned i = 0; i < 2; ++i) {
+    for(unsigned i = 0; i < (sizeof(n1) / sizeof(n1[0])); ++i) {
         ListNode *p1Node = new ListNode(n1[i]);
         p1->next = p1Node;
         p1 = p1->next;
     }
-    for(unsigned i = 0; i < 4; ++i) {
+    for(unsigned i = 0; i < (sizeof(n2) / sizeof(n2[0])); ++i) {
         ListNode *p2Node = new ListNode(n2[i]);
         p2->next = p2Node;
         p2 = p2->next;
