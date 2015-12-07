@@ -20,15 +20,13 @@ using namespace std;
 class Solution {
 public:
     Solution() {
-        maxlen = 0;
+        maxlen = 1;
         last_start = 0;
         index = 1;
     }
     int lengthOfLongestSubstring(string s) {
         if(s.length() == 0)
             return 0;
-        else if(s.length() == 1)
-            return 1;
         else {
             for(int i = 1; i < static_cast<int>(s.length()); ++i) {
                 for(int j = i - 1; j >= last_start; --j) {
@@ -55,7 +53,7 @@ private:
 };
 
 int main() {
-    string s = "abcccaaaa";
+    string s = "abceeefadc";
     Solution test;
     int len = test.lengthOfLongestSubstring(s);
     cout << len << endl;
