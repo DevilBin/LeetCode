@@ -39,12 +39,12 @@ public:
                         index++;
                     }
                 }
-                if(index > maxlen) {
+                if(index >= maxlen) {
                     maxlen = index;
                 }
             }
+            return maxlen;
         }
-        return maxlen;
     }
 private:
     int index;
@@ -53,7 +53,7 @@ private:
 };
 
 int main() {
-    string s = "abceeefadc";
+    string s = "adfcfff";
     Solution test;
     int len = test.lengthOfLongestSubstring(s);
     cout << len << endl;
