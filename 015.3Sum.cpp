@@ -62,8 +62,8 @@ public:
                     }
                 }
             }
+            return result;
         }
-        return result;
     }
     int Split(vector<int> & A, int low, int high) {
         int temp; int i = low; int x = A[low];
