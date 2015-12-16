@@ -40,25 +40,14 @@ public:
                         c = nums[end];
                         if(a + b + c == 0) {
                             vector<int> row;
-                            row.push_back(a);
-                            row.push_back(b);
-                            row.push_back(c);
+                            row.push_back(a); row.push_back(b); row.push_back(c);
                             result.push_back(row);
-                            start = start + 1;
-                            end = end - 1;
-                            while(start < end && nums[end] == nums[end + 1]) {
-                                end--;
-                            }
-                            while(start < end && nums[start] == nums[start - 1]) {
-                                start++;
-                            }
+                            start++; end--;
+                            while(start < end && nums[end] == nums[end + 1]) { end--; }
+                            while(start < end && nums[start] == nums[start - 1]) { start++; }
                         }
-                        else if(a + b + c > 0) {
-                            end = end - 1;
-                        }
-                        else {
-                            start = start + 1;
-                        }
+                        else if(a + b + c > 0) { end--; }
+                        else { start++; }
                     }
                 }
             }
@@ -66,20 +55,16 @@ public:
         }
     }
     int Split(vector<int> & A, int low, int high) {
-        int temp; int i = low; int x = A[low];
+        int i = low; int x = A[low];
         for(int j = low + 1; j <= high; ++j) {
             if(A[j] <= x) {
                 i = i + 1;
                 if(i != j) {
-                    temp = A[i];
-                    A[i] = A[j];
-                    A[j] = temp;
+                    Swap(A[i], A[j]);
                 }
             }
         }
-        temp = A[low];
-        A[low] = A[i];
-        A[i] = temp;
+        Swap(A[i], A[low]);
         return i;
     }
     void QuickSort(vector<int> & A, int low, int high) {
@@ -88,6 +73,12 @@ public:
             QuickSort(A, low, w - 1);
             QuickSort(A, w + 1, high);
         }
+    }
+    void Swap(int & x, int & y) {
+        int z;
+        z = x;
+        x = y;
+        y = z;
     }
 };
 
