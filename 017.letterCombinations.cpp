@@ -29,7 +29,7 @@ public:
             return empty;
         }
         else {
-            vector<string> result(1, "");//firstly, reslut is NULL
+            vector<string> result(1, "");//at first, reslut is NULL
             for(unsigned i = 0; i < digits.size(); ++i) {
                 vector<string> capacity;
                 for(unsigned j = 0; j < result.size(); ++j) {
