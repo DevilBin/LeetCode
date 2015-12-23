@@ -47,12 +47,6 @@ public:
                     if(p3->next) {
                         p4 = p3->next;
                     }
-                    else {
-                        p4 = NULL;
-                    }
-                }
-                else {
-                    p3 = NULL;
                 }
                 if(p4) {
                     p1->next = p4;
@@ -70,7 +64,7 @@ public:
 };
 
 int main() {
-    const int n1[] = {1, 2, 3, 4};
+    const int n1[] = {1, 2, 3, 4, 5};
     ListNode l1(0);
     ListNode * p1 = &l1;
 
