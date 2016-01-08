@@ -27,27 +27,25 @@ public:
         if(strs.size() == 0) {
             return result;
         }
-        else {
-            unordered_map<string, vector<int> > maps;
-            for(unsigned i = 0; i < strs.size(); ++i) {
-                string key = strs[i];
-                sort(key.begin(), key.end());
-                maps[key].push_back(i);
-            }
-            for(auto it = maps.begin(); it != maps.end(); ++it) {
-                vector<string> capacity;
-                if(it->second.size() > 0) {
-                    unsigned n = 0;
-                    while(n < it->second.size()) {
-                        capacity.push_back(strs[it->second[n]]);
-                        n++;
-                    }
-                    sort(capacity.begin(), capacity.end());
-                    result.push_back(capacity);
-                }
-            }
-            return result;
+        unordered_map<string, vector<int> > maps;
+        for(unsigned i = 0; i < strs.size(); ++i) {
+            string key = strs[i];
+            sort(key.begin(), key.end());
+            maps[key].push_back(i);
         }
+        for(auto it = maps.begin(); it != maps.end(); ++it) {
+            vector<string> capacity;
+            if(it->second.size() > 0) {
+                unsigned n = 0;
+                while(n < it->second.size()) {
+                    capacity.push_back(strs[it->second[n]]);
+                    n++;
+                }
+                sort(capacity.begin(), capacity.end());
+                result.push_back(capacity);
+            }
+        }
+        return result;
     }
 };
 
@@ -59,6 +57,7 @@ int main() {
     for(unsigned i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
         strs.push_back(arr[i]);
     }
+
     vector<vector<string> > result = test.groupAnagrams(strs);
     for(unsigned i = 0; i < result.size(); ++i) {
         for(unsigned j = 0; j < result[i].size(); ++j) {
