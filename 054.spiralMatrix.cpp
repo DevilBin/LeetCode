@@ -39,7 +39,7 @@ public:
                     for(int i = left; i <= right; ++i) {
                         result.push_back(matrix[top][i]);
                     }
-                top++;
+                    top++;
                 }
                 else
                     break;
