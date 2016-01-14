@@ -41,8 +41,7 @@ public:
                     }
                     top++;
                 }
-                else
-                    break;
+                else break;
                 // right: top --> down
                 if(left <= right) {
                     for(int i = top; i <= down; ++i) {
@@ -50,8 +49,7 @@ public:
                     }
                     right--;
                 }
-                else 
-                    break;
+                else break;
                 // down: right --> left
                 if(top <= down) {
                     for(int i = right; i >= left; --i) {
@@ -59,8 +57,7 @@ public:
                     }
                     down--;
                 }
-                else
-                    break;
+                else break;
                 // left: down --> top
                 if(left <= right) {
                     for(int i = down; i >= top; --i) {
@@ -68,8 +65,7 @@ public:
                     }
                     left++;
                 }
-                else 
-                    break;
+                else break;
             }
             return result;
         }
