@@ -41,8 +41,6 @@ public:
                         symbol[j + 1] += grid[i][j];
                     }
                     else {
-                        //cout << "\n***" << i << ' ' << j << endl;
-                        //cout << "gddfd" << grid[i][j - 1] << ' ' << grid[i][j] << ' ' << symbol[j + 1] << endl;
                         if(symbol[j + 1] > symbol[j]) {
                             symbol[j + 1] = symbol[j] + grid[i][j];
                         }
@@ -50,9 +48,7 @@ public:
                             symbol[j + 1] += grid[i][j];
                         }
                     }
-                    cout << setw(2) << symbol[j + 1] << ' ';
                 }
-                cout << endl;
             }
             return symbol[n];
         }
