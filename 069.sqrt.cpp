@@ -51,7 +51,6 @@ public:
 
 int main() {
     Solution test;
-    cout << test.mySqrt(9) << endl;
     cout << test.mySqrt(9999999) << endl;
     return 0;
 }
