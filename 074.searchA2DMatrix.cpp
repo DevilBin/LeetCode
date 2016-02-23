@@ -79,6 +79,6 @@ int main() {
     }
 
     Solution test;
-    cout << test.searchMatrix(matrix, 35) << endl;
+    cout << test.searchMatrix(matrix, 16) << endl;
     return 0;
 }
