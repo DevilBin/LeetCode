@@ -54,10 +54,10 @@ public:
 };
 
 int main() {
-    const int arr[] = {4, 5, 6, 7, 0, 1, 2};
+    const int arr[] = {4, 5, 6, 7, 0, 1, 2, 3};
     vector<int> nums(arr, arr + sizeof(arr) / sizeof(arr[0]));
 
     Solution test;
-    cout << test.search(nums, 1) << endl;
+    cout << test.search(nums, 3) << endl;
     return 0;
 }
