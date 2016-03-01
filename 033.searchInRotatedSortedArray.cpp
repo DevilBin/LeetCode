@@ -32,7 +32,7 @@ public:
             int high = nums.size() - 1;
             while(low <= high) {
                 mid = (low + high) / 2;
-                if(target == nums[mid] ) {
+                if(target == nums[mid]) {
                     return mid;
                 }
                 if(nums[mid] >= nums[low]) {
