@@ -1,0 +1,76 @@
+/*************************************************************************
+	> File Name: 082.removeDuplicatesFromSortListII.cpp
+	> Author: DevilBin 
+	> Mail: whu.evil.binary@gmail.com 
+	> Created Time: 2016/3/2 19:33:56
+ ************************************************************************/
+
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <cstdlib>
+#include <string>
+#include <vector>
+#include <deque>
+#include <list>
+#include <map>
+#include <algorithm>
+#include <sstream>
+#include <climits>
+
+using namespace std;
+
+struct ListNode {
+    int val;
+    ListNode * next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
+class Solution {
+public:
+    ListNode * deleteDuplicates(ListNode * head) {
+        if(head == NULL || head->next == NULL) {
+            return head;
+        }
+        else {
+            ListNode * l = head;
+            ListNode * m = head->next;
+            ListNode * n = head->next->next;
+            while(m != NULL && n != NULL) {
+                if(m->val != n->val) {
+                    if(m->next == n) {
+                        m = m->next;
+                        n = n->next;
+                    }
+                    else {
+                        m = n;
+                        m = n->next;
+                    }
+                }
+                else {
+                    n = n->next;
+                }
+            }
+            return head;
+        }
+    }
+};
+
+int main() {
+    const int arr[] = {1, 2, 3, 3, 4, 4, 5};
+    ListNode list(0);
+    ListNode * pNode = &list;
+
+    for(unsigned i = 0; i < sizeof(arr) / sizeof(arr[0]); ++i) {
+        pNode->next = new ListNode(arr[i]);
+        pNode = pNode->next;
+    }
+
+    Solution test;
+    ListNode * head = test.deleteDuplicates(list.next);
+    while(head != NULL) {
+        cout << head->val << ' ';
+        head = head->next;
+    }
+    return 0;
+}
