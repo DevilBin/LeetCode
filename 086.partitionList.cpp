@@ -37,7 +37,6 @@ public:
             ListNode * current = head;
             ListNode * minNode = &min;
             ListNode * maxNode = &max;
-            cout << "aaaaa" << endl;
             while(current != NULL) {
                 if(current->val < x) {
                     minNode->next = new ListNode(current->val);
