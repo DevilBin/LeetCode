@@ -47,14 +47,32 @@ public:
     }
 };
 
+void init(deque<TreeNode *> & nodes, const int arr[], int size) {
+    int i = 1;
+    while(i < size) {
+        if(arr[i] != '#' && i < size) {
+            nodes[0]->left = new TreeNode(arr[i]);
+            nodes.push_back(nodes[0]->left);
+        }
+        i++;
+        if(arr[i] != '#' && i < size) {
+            nodes[0]->right = new TreeNode(arr[i]);
+            nodes.push_back(nodes[0]->right);
+        }
+        i++;
+        nodes.pop_front();
+    }
+}
 
 int main() {
-    TreeNode pNode(1);
-    pNode.right = new TreeNode(2);
-    pNode.right->left = new TreeNode(3);
+    const int arr[] = {1, 2, 3, '#', '#', 4, '#', '#', 5};
+    TreeNode * root = new TreeNode(arr[0]);
+    deque<TreeNode *> nodes = {root};
+
+    init(nodes, arr, sizeof(arr) / sizeof(arr[0]));
 
     Solution test;
-    vector<int> result = test.inorderTraversal(&pNode);
+    vector<int> result = test.inorderTraversal(root);
 
     for(auto c : result) {
         cout << c << ' ';
