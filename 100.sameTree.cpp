@@ -33,7 +33,7 @@ public:
         return isEqual(p, q);
     }
     bool isEqual(TreeNode * p, TreeNode * q) {
-        if(p == NULL || p == NULL) {
+        if(p == NULL || q == NULL) {
             if(p == q)
                 return true;
             else
